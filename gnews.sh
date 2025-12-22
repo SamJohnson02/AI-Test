@@ -5,7 +5,7 @@ CATEGORY="general"
 LANG="en"
 COUNTRY="us"
 MAX="10"
-API_KEY="5c893adee1a8a5d6cdfcfe204bc729e8"
+API_KEY=$GNEWS_API_KEY
 
 # Usage message
 usage() {
@@ -44,6 +44,7 @@ curl -s "$URL" | jq -r '
   .articles[] |
   "----------------------------------------",
   "Title:      \(.title)",
+  "Descriotion: \(.description)",
   "Source:     \(.source.name)",
   "Published:  \(.publishedAt)",
   "URL:        \(.url)",
